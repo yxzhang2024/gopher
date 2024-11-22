@@ -1,0 +1,26 @@
+{
+    "Package_Name": "crypto/rc4",
+    "Dangerous_Functions": [
+        {
+            "Name": "NewCipher",
+            "Reason": "RC4 - RFC 7465 - Prohibiting RC4 Cipher Suites"
+        }
+    ],
+    "Warning_Functions": [
+        {
+            "Name": "(*Cipher).Reset",
+            "Reason": "Deprecated: Reset can't guarantee that the key will be entirely removed from the process's memory."
+        }
+    ],
+    "Parameter_Constrains": {
+        "NewCipher": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "RC4-key should be random."
+            }
+        ]
+    }
+}

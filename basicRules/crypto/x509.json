@@ -1,0 +1,84 @@
+{
+    "Package_Name": "crypto/x509",
+    "Warning_Functions": [
+        {
+            "Name": "DecryptPEMBlock",
+            "Reason": "Deprecated: Legacy PEM encryption as specified in RFC 1423 is insecure by design. Since it does not authenticate the ciphertext, it is vulnerable to padding oracle attacks that can let an attacker recover the plaintext."
+        },
+        {
+            "Name": "EncryptPEMBlock",
+            "Reason": "Deprecated: Legacy PEM encryption as specified in RFC 1423 is insecure by design. Since it does not authenticate the ciphertext, it is vulnerable to padding oracle attacks that can let an attacker recover the plaintext."
+        },
+        {
+            "Name": "IsEncryptedPEMBlock",
+            "Reason": "Deprecated: Legacy PEM encryption as specified in RFC 1423 is insecure by design. Since it does not authenticate the ciphertext, it is vulnerable to padding oracle attacks that can let an attacker recover the plaintext."
+        },
+        {
+            "Name": "ParseCRL",
+            "Reason": "Deprecated: Use ParseRevocationList instead."
+        },
+        {
+            "Name": "ParseDERCRL",
+            "Reason": "Deprecated: Use ParseRevocationList instead."
+        },
+        {
+            "Name": "(*CertPool).Subjects",
+            "Reason": "Deprecated: if s was returned by SystemCertPool, Subjects will not include the system roots."
+        },
+        {
+            "Name": "(*Certificate).CheckCRLSignature",
+            "Reason": "Deprecated: Use RevocationList.CheckSignatureFrom instead."
+        },
+        {
+            "Name": "(*Certificate).CreateCRL",
+            "Reason": "Deprecated: this method does not generate an RFC 5280 conformant X.509 v2 CRL. To generate a standards compliant CRL, use CreateRevocationList instead."
+        }
+    ],
+    "Parameter_Constrains": {
+        "CreateCertificate": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be used to generate X509 certificate parameters."
+            }
+        ],
+        "CreateCertificateRequest": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be used to generate X509 certificate parameters."
+            }
+        ],
+        "CreateRevocationList": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be used to generate X509 certificate parameters."
+            }
+        ],
+        "EncryptPEMBlock": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be used to generate encrypt parameters."
+            }
+        ],
+        "(*Certificate).CreateCRL": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Cryptologically secure IO should be used to generate X509 certificate parameters."
+            }
+        ]
+    }
+}

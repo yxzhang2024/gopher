@@ -1,0 +1,104 @@
+{
+    "Package_Name": "net/http",
+    "Parameter_Constrains": {
+        "(*Client).Get": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "(*Client).Head": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "(*Client).Post": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "(*Client).PostForm": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "Get": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "Head": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "Post": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "PostForm": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "RedirectHandler": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "NewRequest": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ],
+        "NewRequestWithContext": [
+            {
+                "Predicate": "HTTPS",
+                "Object": [
+                    "2"
+                ],
+                "Reason": "HTTP connection is very dangerous"
+            }
+        ]
+    }
+}

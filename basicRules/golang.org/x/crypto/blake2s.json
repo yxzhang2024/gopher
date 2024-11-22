@@ -1,0 +1,39 @@
+{
+    "Package_Name": "golang.org/x/crypto/blake2b",
+    "Parameter_Constrains": {
+        "New128": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "MAC-key should be random."
+            },
+            {
+                "Predicate": "BYTE_LENGTH",
+                "Object": [
+                    "0",
+                    "16"
+                ],
+                "Reason": "recommended to use values equal or greater than 16 if BLAKE2 is used as a MAC function. The key is at least 16 bytes long."
+            }
+        ],
+        "New256": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "MAC-key should be random."
+            },
+            {
+                "Predicate": "BYTE_LENGTH",
+                "Object": [
+                    "0",
+                    "32"
+                ],
+                "Reason": "If used as a MAC, the length of the key should be at least the same as the output length of the hash function, otherwise it will reduce the security of the MAC function"
+            }
+        ]
+    }
+}

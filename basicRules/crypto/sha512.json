@@ -1,0 +1,13 @@
+{
+    "Package_Name": "crypto/sha512",
+    "Warning_Functions": [
+        {
+            "Name": "New512_224",
+            "Reason": "SHA-512/224 - NIST 800-57 : In 2031 and beyond, SHA-512/224 shall not be used for applying cryptographic protection."
+        },
+        {
+            "Name": "Sum512_224",
+            "Reason": "SHA-512/224 - NIST 800-57 : In 2031 and beyond, SHA-512/224 shall not be used for applying cryptographic protection."
+        }
+    ]
+}

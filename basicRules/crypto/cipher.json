@@ -1,0 +1,50 @@
+{
+    "Package_Name": "crypto/cipher",
+    "Parameter_Constrains": {
+        "NewCBCEncrypter": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "IVs should be random in CBC mode, it potentially lead to a Padding Oracle attack and CPA attack"
+            }
+        ],
+        "NewCFBEncrypter": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "IVs should be random in CFB mode, otherwise it potentially lead to CPA attack."
+            }
+        ],
+        "NewCTR": [
+            {
+                "Predicate": "NOT_CONST",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "IV should be unique in CTR mode, otherwise it potentially lead to CPA attack."
+            }
+        ],
+        "NewOFB": [
+            {
+                "Predicate": "NOT_CONST",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "IV should be unique in OFB mode, otherwise it potentially lead to CPA attack."
+            }
+        ],
+        "(AEAD).Seal": [
+            {
+                "Predicate": "NOT_CONST",
+                "Object": [
+                    "2"
+                ],
+                "Reason": "IV should be unique in GCM mode, otherwise it potentially lead to CPA attack."
+            }
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "Package_Name": "golang.org/x/crypto/ed25519",
+    "Parameter_Constrains": {
+        "GenerateKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be used to generate private key."
+            }
+        ]
+    }
+}

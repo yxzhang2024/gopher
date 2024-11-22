@@ -1,0 +1,17 @@
+{
+    "Package_Name": "golang.org/x/crypto/acme",
+    "Warning_Functions": [
+        {
+            "Name": "(*Client).CreateCert",
+            "Reason": "Deprecated: this was for the pre-RFC 8555 version of ACME. Callers should use CreateOrderCert."
+        },
+        {
+            "Name": "(*Client).TLSSNI01ChallengeCert",
+            "Reason": "Deprecated: This challenge type is unused in both draft-02 and RFC versions of the ACME spec."
+        },
+        {
+            "Name": "(*Client).TLSSNI02ChallengeCert",
+            "Reason": "Deprecated: This challenge type is unused in both draft-02 and RFC versions of the ACME spec."
+        }
+    ]
+}

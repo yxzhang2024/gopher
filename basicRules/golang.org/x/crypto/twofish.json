@@ -1,0 +1,14 @@
+{
+    "Package_Name": "golang.org/x/crypto/twofish",
+    "Parameter_Constrains": {
+        "NewCipher": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "twofish-key should be random."
+            }
+        ]
+    }
+}

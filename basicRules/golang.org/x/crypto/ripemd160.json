@@ -1,0 +1,9 @@
+{
+    "Package_Name": "golang.org/x/crypto/ripemd160",
+    "Dangerous_Functions": [
+        {
+            "Name": "New",
+            "Reason": "Mendel et al. On the Collision Resistance of RIPEMD-160. \nDeprecated: RIPEMD-160 is a legacy hash and should not be used for new applications. Also, this package does not and will not provide an optimized implementation. Instead, use a modern hash like SHA-256 (from crypto/sha256)."
+        }
+    ]
+}

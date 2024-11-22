@@ -1,0 +1,13 @@
+{
+    "Package_Name": "crypto/sha1",
+    "Dangerous_Functions": [
+        {
+            "Name": "New",
+            "Reason": "RFC 9155 - Deprecating SHA-1 Signature Hashes in TLS 1.2 and DTLS 1.2. "
+        },
+        {
+            "Name": "Sum",
+            "Reason": "RFC 9155 - Deprecating SHA-1 Signature Hashes in TLS 1.2 and DTLS 1.2. "
+        }
+    ]
+}

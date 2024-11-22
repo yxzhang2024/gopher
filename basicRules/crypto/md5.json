@@ -1,0 +1,13 @@
+{
+    "Package_Name": "crypto/md5",
+    "Dangerous_Functions": [
+        {
+            "Name": "New",
+            "Reason": "MD5 - RFC 9155 - Deprecating MD5 Signature Hashes in TLS 1.2 and DTLS 1.2. Use MD5 in HMAC is Acceptable But Not Recommended"
+        },
+        {
+            "Name": "Sum",
+            "Reason": "MD5 - RFC 9155 - Deprecating MD5 Signature Hashes in TLS 1.2 and DTLS 1.2. Use MD5 in HMAC is Acceptable But Not Recommended"
+        }
+    ]
+}

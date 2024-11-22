@@ -1,0 +1,84 @@
+{
+    "Package_Name": "crypto/tls",
+    "Warning_Functions": [
+        {
+            "Name": "(*Config).BuildNameToCertificate",
+            "Reason": "Deprecated: NameToCertificate only allows associating a single certificate with a given name. Leave that field nil to let the library select the first compatible chain from Certificates."
+        }
+    ],
+    "Struct_Constrains": {
+        "Config": [
+            {
+                "Predicate": "EQ_FALSE",
+                "Object": [
+                    "InsecureSkipVerify"
+                ],
+                "Reason": "Insecure Verification"
+            },
+            {
+                "Predicate": "SECURE_TLS_SUITE",
+                "Object": [
+                    "CipherSuites"
+                ],
+                "Reason": "The TLS suite can be customized based on https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml -Recommended choices for parameters-4"
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "MinVersion",
+                    "771"
+                ],
+                "Reason": "Insecure TLS Version"
+            }
+        ],
+        "ClientHelloInfo": [
+            {
+                "Predicate": "SECURE_TLS_SUITE",
+                "Object": [
+                    "CipherSuites"
+                ],
+                "Reason": "The TLS suite can be customized based on https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml -Recommended choices for parameters-4"
+            },
+            {
+                "Predicate": "SECURE_TLS_SUITE",
+                "Object": [
+                    "SignatureSchemes"
+                ],
+                "Reason": "RFC 9155 - Deprecating MD5 and SHA-1 Signature Hashes in TLS 1.2 and DTLS 1.2. Use MD5 in HMAC is Acceptable But Not Recommendedy"
+            },
+            {
+                "Predicate": "SECURE_TLS_SUITE",
+                "Object": [
+                    "SupportedVersions"
+                ],
+                "Reason": "Insecure TLS Version"
+            }
+        ],
+        "CertificateRequestInfo": [
+            {
+                "Predicate": "SECURE_TLS_SUITE",
+                "Object": [
+                    "SignatureSchemes"
+                ],
+                "Reason": "RFC 9155 - Deprecating MD5 and SHA-1 Signature Hashes in TLS 1.2 and DTLS 1.2. Use MD5 in HMAC is Acceptable But Not Recommended"
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "Version",
+                    "771"
+                ],
+                "Reason": "Insecure TLS Version"
+            }
+        ],
+        "Certificate": [
+            {
+                "Predicate": "SECURE_TLS_SUITE",
+                "Object": [
+                    "SignatureSchemes"
+                ],
+                "Reason": "RFC 9155 - Deprecating MD5 and SHA-1 Signature Hashes in TLS 1.2 and DTLS 1.2. Use MD5 in HMAC is Acceptable But Not Recommendedy"
+            }
+        ]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "Package_Name": "golang.org/x/crypto/nacl/sign",
+    "Parameter_Constrains": {
+        "GenerateKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys. "
+            }
+        ]
+    }
+}

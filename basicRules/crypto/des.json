@@ -1,0 +1,43 @@
+{
+    "Package_Name": "crypto/des",
+    "Dangerous_Functions": [
+        {
+            "Name": "NewCipher",
+            "Reason": "DES - NIST Withdraws Outdated Data Encryption Standard"
+        }
+    ],
+    "Warning_Functions": [
+        {
+            "Name": "NewTripleDESCipher",
+            "Reason": "3DES is aceptable but not recommended, AES can be used instead."
+        }
+    ],
+    "Parameter_Constrains": {
+        "NewCipher": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "DES-key should be random."
+            }
+        ],
+        "NewTripleDESCipher": [
+            {
+                "Predicate": "BYTE_LENGTH",
+                "Object": [
+                    "0",
+                    "24"
+                ],
+                "Reason": "2TDES is insecure, use aes instead."
+            },
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "DES-key should be random."
+            }
+        ]
+    }
+}

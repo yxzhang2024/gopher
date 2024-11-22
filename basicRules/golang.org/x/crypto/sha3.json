@@ -1,0 +1,13 @@
+{
+    "Package_Name": "golang.org/x/crypto/sha3",
+    "Warning_Functions": [
+        {
+            "Name": "New224",
+            "Reason": "SHA3-224 - NIST 800-57 : In 2031 and beyond, SHA3-224 shall not be used for applying cryptographic protection."
+        },
+        {
+            "Name": "Sum224",
+            "Reason": "SHA3-224 - NIST 800-57 : In 2031 and beyond, SHA3-224 shall not be used for applying cryptographic protection."
+        }
+    ]
+}

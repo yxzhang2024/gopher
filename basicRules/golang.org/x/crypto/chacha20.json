@@ -1,0 +1,29 @@
+{
+    "Package_Name": "golang.org/x/crypto/chacha20",
+    "Warning_Functions": [
+        {
+            "Name": "NewUnauthenticatedCipher",
+            "Reason": "ChaCha20, like all stream ciphers, is not authenticated and allows attackers to silently tamper with the plaintext. For this reason, it is more appropriate as a building block than as a standalone encryption mechanism. Instead, consider using package golang.org/x/crypto/chacha20poly1305."
+        }
+    ],
+    "Parameter_Constrains": {
+        "HChaCha20": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Key should be random."
+            }
+        ],
+        "NewUnauthenticatedCipher": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Key should be random."
+            }
+        ]
+    }
+}

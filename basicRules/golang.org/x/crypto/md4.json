@@ -1,0 +1,9 @@
+{
+    "Package_Name": "pkg.go.dev/golang.org/x/crypto/md4",
+    "Dangerous_Functions": [
+        {
+            "Name": "New",
+            "Reason": "MD4 - RFC 6150 - MD4 to Historic Status"
+        }
+    ]
+}

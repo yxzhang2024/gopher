@@ -1,0 +1,40 @@
+{
+    "Package_Name": "crypto/dsa",
+    "Parameter_Constrains": {
+        "GenerateKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys. "
+            }
+        ],
+        "GenerateParameters": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating parameters. "
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "2",
+                    "3"
+                ],
+                "Reason": "DSA-1024 is insecure, DSA-2048 is Acceptable but not recommended."
+            }
+        ],
+        "Sign": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating parameters. "
+            }
+        ]
+    }
+}

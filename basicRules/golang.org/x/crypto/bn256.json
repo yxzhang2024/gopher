@@ -1,0 +1,33 @@
+{
+    "Package_Name": "golang.org/x/crypto/bn256",
+    "Warning_Functions": [
+        {
+            "Name": "RandomG1",
+            "Reason": "Deprecated: due to its weakened security, new systems should not rely on this elliptic curve. This package is frozen, and not implemented in constant time. "
+        },
+        {
+            "Name": "RandomG2",
+            "Reason": "Deprecated: due to its weakened security, new systems should not rely on this elliptic curve. This package is frozen, and not implemented in constant time. "
+        }
+    ],
+    "Parameter_Constrains": {
+        "RandomG1": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys. "
+            }
+        ],
+        "RandomG2": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys. "
+            }
+        ]
+    }
+}

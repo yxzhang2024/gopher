@@ -1,0 +1,14 @@
+{
+    "Package_Name": "crypto/aes",
+    "Parameter_Constrains": {
+        "NewCipher": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "AES-key should be random."
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "Package_Name": "crypto/hmac",
+    "Parameter_Constrains": {
+        "New": [
+            {
+                "Predicate": "SECURE_HMAC_HASH",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Don't use HMAC_MD5, recommand practice is \" HMAC-SHA256 \"."
+            },
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "HMAC-key should be random. If authentication is not required, the hash function(sha3/sha256/sha512) is sufficient for use."
+            },
+            {
+                "Predicate": "BYTE_LENGTH",
+                "Object": [
+                    "1",
+                    "16"
+                ],
+                "Reason": "The length of the key should be at least the same as the output length of the hash function, otherwise it will reduce the security of the MAC function. If authentication is not required, the hash function(sha3/sha256/sha512) is sufficient for use"
+            }
+        ]
+    }
+}

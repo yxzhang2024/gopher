@@ -1,0 +1,54 @@
+{
+    "Package_Name": "golang.org/x/crypto/ssh",
+    "Dangerous_Functions": [
+        {
+            "Name": "InsecureIgnoreHostKey",
+            "Reason": "InsecureIgnoreHostKey returns a function that can be used for ClientConfig.HostKeyCallback to accept any host key. It should not be used for production code."
+        },
+        {
+            "Name": "FingerprintLegacyMD5",
+            "Reason": "MD5 is Dangerous"
+        }
+    ],
+    "Struct_Constrains": {
+        "Config": [
+            {
+                "Predicate": "SECURE_SSH_SUITE",
+                "Object": [
+                    "KeyExchanges"
+                ],
+                "Reason": "The SSH suite can be customized based on https://www.iana.org/assignments/ssh-parameters/ssh-parameters.xhtml"
+            },
+            {
+                "Predicate": "SECURE_SSH_SUITE",
+                "Object": [
+                    "Ciphers"
+                ],
+                "Reason": "The SSH suite can be customized based on https://www.iana.org/assignments/ssh-parameters/ssh-parameters.xhtml. CBC-mode has Timing vulnerabilities"
+            },
+            {
+                "Predicate": "SECURE_SSH_SUITE",
+                "Object": [
+                    "MACs"
+                ],
+                "Reason": "While HMAC-SHA1-96 might be secure, it’s generally recommended to use the mainstream SHA1, as long as the other side (like your SSH client) supports it"
+            },
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "Rand"
+                ],
+                "Reason": "Rand provides the source of entropy for cryptographic primitives, is not configured with PRNG"
+            }
+        ],
+        "ServerConfig": [
+            {
+                "Predicate": "EQ_FALSE",
+                "Object": [
+                    "NoClientAuth"
+                ],
+                "Reason": "Insecure Verification"
+            }
+        ]
+    }
+}

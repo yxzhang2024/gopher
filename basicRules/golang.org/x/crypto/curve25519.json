@@ -1,0 +1,9 @@
+{
+    "Package_Name": "golang.org/x/crypto/curve25519",
+    "Warning_Functions": [
+        {
+            "Name": "ScalarMult",
+            "Reason": "Deprecated: when provided a low-order point, ScalarMult will set dst to all zeroes, irrespective of the scalar. Instead, use the X25519 function, which will return an error."
+        }
+    ]
+}

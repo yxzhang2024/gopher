@@ -1,0 +1,13 @@
+{
+    "Package_Name": "golang.org/x/crypto/pkcs12",
+    "Warning_Functions": [
+        {
+            "Name": "Decode",
+            "Reason": "This package is frozen. If it's missing functionality you need, consider an alternative like software.sslmate.com/src/go-pkcs12."
+        },
+        {
+            "Name": "ToPEM",
+            "Reason": "This package is frozen. If it's missing functionality you need, consider an alternative like software.sslmate.com/src/go-pkcs12."
+        }
+    ]
+}

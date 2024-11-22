@@ -1,0 +1,46 @@
+{
+    "Package_Name": "golang.org/x/crypto/scrypt",
+    "Parameter_Constrains": {
+        "Key": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Salt should be random"
+            },
+            {
+                "Predicate": "BYTE_LENGTH",
+                "Object": [
+                    "1",
+                    "16"
+                ],
+                "Reason": "Suggest that the salt be random, with a length of at least 16 bytes. For detailed information, please refer to NIST SP 800-132."
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "2",
+                    "131072"
+                ],
+                "Reason": "owasp recommended parameters is N=2^17 (128 MiB), when r=8 (1024 bytes) and p=1. The parameters N, r, and p should be increased as memory latency and CPU parallelism increases"
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "3",
+                    "8"
+                ],
+                "Reason": "owasp recommended parameters is r=8 (1024 bytes),when N=2^17 (128 MiB) and p=1. The parameters N, r, and p should be increased as memory latency and CPU parallelism increases"
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "4",
+                    "1"
+                ],
+                "Reason": "owasp recommended parameters is p=1. The parameters N, r, and p should be increased as memory latency and CPU parallelism increases"
+            }
+        ]
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "Package_Name": "crypto/elliptic",
+    "Warning_Functions": [
+        {
+            "Name": "P224",
+            "Reason": "P224 is Acceptable but not recommended."
+        },
+        {
+            "Name": "GenerateKey",
+            "Reason": "Deprecated: for ECDH, use the GenerateKey methods of the crypto/ecdh package; for ECDSA, use the GenerateKey function of the crypto/ecdsa package."
+        },
+        {
+            "Name": "Marshal",
+            "Reason": "Deprecated: for ECDH, use the GenerateKey methods of the crypto/ecdh package; for ECDSA, use the GenerateKey function of the crypto/ecdsa package."
+        },
+        {
+            "Name": "Unmarshal",
+            "Reason": "Deprecated: for ECDH, use the crypto/ecdh package. This function accepts an encoding equivalent to that of the NewPublicKey methods in crypto/ecdh."
+        },
+        {
+            "Name": "(*CurveParams).Add",
+            "Reason": "Deprecated: the CurveParams methods are deprecated and are not guaranteed to provide any security property. For ECDH, use the crypto/ecdh package. For ECDSA, use the crypto/ecdsa package with a Curve value returned directly from P224(), P256(), P384(), or P521()."
+        },
+        {
+            "Name": "(*CurveParams).Double",
+            "Reason": "Deprecated: the CurveParams methods are deprecated and are not guaranteed to provide any security property. For ECDH, use the crypto/ecdh package. For ECDSA, use the crypto/ecdsa package with a Curve value returned directly from P224(), P256(), P384(), or P521()."
+        },
+        {
+            "Name": "(*CurveParams).IsOnCurve",
+            "Reason": "Deprecated: the CurveParams methods are deprecated and are not guaranteed to provide any security property. For ECDH, use the crypto/ecdh package. For ECDSA, use the crypto/ecdsa package with a Curve value returned directly from P224(), P256(), P384(), or P521()."
+        },
+        {
+            "Name": "(*CurveParams).ScalarBaseMult",
+            "Reason": "Deprecated: the CurveParams methods are deprecated and are not guaranteed to provide any security property. For ECDH, use the crypto/ecdh package. For ECDSA, use the crypto/ecdsa package with a Curve value returned directly from P224(), P256(), P384(), or P521()."
+        },
+        {
+            "Name": "(*CurveParams).ScalarMult",
+            "Reason": "Deprecated: the CurveParams methods are deprecated and are not guaranteed to provide any security property. For ECDH, use the crypto/ecdh package. For ECDSA, use the crypto/ecdsa package with a Curve value returned directly from P224(), P256(), P384(), or P521()."
+        }
+    ],
+    "Parameter_Constrains": {
+        "GenerateKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys. "
+            }
+        ]
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "Package_Name": "golang.org/x/crypto/argon2",
+    "Parameter_Constrains": {
+        "IDKey": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Salt should be random"
+            },
+            {
+                "Predicate": "BYTE_LENGTH",
+                "Object": [
+                    "1",
+                    "16"
+                ],
+                "Reason": "The author recommends 128bits salt."
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "2",
+                    "1"
+                ],
+                "Reason": "The draft RFC recommends time=1, when memory=64*1024 and thread=4."
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "3",
+                    "65536"
+                ],
+                "Reason": "The draft RFC recommends memory=64*1024, and mtime=1 and thread=4."
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "4",
+                    "4"
+                ],
+                "Reason": "The draft RFC recommends thread=4, when time=1 and memory=64*1024."
+            }
+        ],
+        "Key": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Salt should be random"
+            },
+            {
+                "Predicate": "BYTE_LENGTH",
+                "Object": [
+                    "1",
+                    "16"
+                ],
+                "Reason": "The author recommends 128bits salt."
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "2",
+                    "3"
+                ],
+                "Reason": "The draft RFC recommends time=3, when memory=32*1024 and thread=4."
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "3",
+                    "32768"
+                ],
+                "Reason": "The draft RFC recommends memory=32*1024, and time=1 and thread=4."
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "4",
+                    "4"
+                ],
+                "Reason": "The draft RFC recommends thread=4, when time=1 and memory=32*1024."
+            }
+        ]
+    }
+}

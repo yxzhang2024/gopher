@@ -1,0 +1,28 @@
+{
+    "Package_Name": "pkg.go.dev/golang.org/x/crypto/otr",
+    "Warning_Functions": [
+        {
+            "Name": "(*PrivateKey).Sign",
+            "Reason": "The version of OTR implemented by this package has been deprecated (https://bugs.otr.im/lib/libotr/issues/140). An implementation of OTRv3 is available at https://github.com/coyim/otr3."
+        },
+        {
+            "Name": "(*PublicKey).Verify",
+            "Reason": "The version of OTR implemented by this package has been deprecated (https://bugs.otr.im/lib/libotr/issues/140). An implementation of OTRv3 is available at https://github.com/coyim/otr3."
+        },
+        {
+            "Name": "(*PrivateKey).GenerateKey",
+            "Reason": "The version of OTR implemented by this package has been deprecated (https://bugs.otr.im/lib/libotr/issues/140). An implementation of OTRv3 is available at https://github.com/coyim/otr3."
+        }
+    ],
+    "Parameter_Constrains": {
+        "(*PrivateKey).GenerateKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Cryptologically secure IO should be used to generate private key."
+            }
+        ]
+    }
+}

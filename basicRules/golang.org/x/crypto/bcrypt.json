@@ -1,0 +1,22 @@
+{
+    "Package_Name": "golang.org/x/crypto/bcrypt",
+    "Parameter_Constrains": {
+        "GenerateFromPassword": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "PassWord should be random"
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "1",
+                    "12"
+                ],
+                "Reason": "The cost should be greater than 12. 10 might be not safe."
+            }
+        ]
+    }
+}

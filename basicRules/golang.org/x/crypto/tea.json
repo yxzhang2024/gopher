@@ -1,0 +1,33 @@
+{
+    "Package_Name": "golang.org/x/crypto/tea",
+    "Dangerous_Functions": [
+        {
+            "Name": "NewCipher",
+            "Reason": "TEA - Sweet32: Birthday attacks on 64-bit block ciphers in TLS and OpenVPN."
+        },
+        {
+            "Name": "NewCipherWithRounds",
+            "Reason": "TEA - Sweet32: Birthday attacks on 64-bit block ciphers in TLS and OpenVPN"
+        }
+    ],
+    "Parameter_Constrains": {
+        "NewCipher": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "TEA-key should be random."
+            }
+        ],
+        "NewCipherWithRounds": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "TEA-key should be random."
+            }
+        ]
+    }
+}

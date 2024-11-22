@@ -1,0 +1,21 @@
+{
+    "Package_Name": "pkg.go.dev/golang.org/x/crypto/openpgp",
+    "Warning_Functions": [
+        {
+            "Name": "CheckArmoredDetachedSignature",
+            "Reason": "Deprecated: this package is unmaintained except for security fixes. New applications should consider a more focused, modern alternative to OpenPGP for their specific task. If you are required to interoperate with OpenPGP systems and need a maintained package, consider a community fork. See https://golang.org/issue/44226."
+        },
+        {
+            "Name": "CheckDetachedSignature",
+            "Reason": "Deprecated: this package is unmaintained except for security fixes. New applications should consider a more focused, modern alternative to OpenPGP for their specific task. If you are required to interoperate with OpenPGP systems and need a maintained package, consider a community fork. See https://golang.org/issue/44226."
+        },
+        {
+            "Name": "NewEntity",
+            "Reason": "Deprecated: this package is unmaintained except for security fixes. New applications should consider a more focused, modern alternative to OpenPGP for their specific task. If you are required to interoperate with OpenPGP systems and need a maintained package, consider a community fork. See https://golang.org/issue/44226."
+        },
+        {
+            "Name": "ReadEntity",
+            "Reason": "Deprecated: this package is unmaintained except for security fixes. New applications should consider a more focused, modern alternative to OpenPGP for their specific task. If you are required to interoperate with OpenPGP systems and need a maintained package, consider a community fork. See https://golang.org/issue/44226."
+        }
+    ]
+}

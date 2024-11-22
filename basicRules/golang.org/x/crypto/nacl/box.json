@@ -1,0 +1,41 @@
+{
+    "Package_Name": "golang.org/x/crypto/nacl/box",
+    "Parameter_Constrains": {
+        "GenerateKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys. "
+            }
+        ],
+        "Seal": [
+            {
+                "Predicate": "NOT_CONST",
+                "Object": [
+                    "2"
+                ],
+                "Reason": "R11: The nonce must be unique for each distinct message for a given pair of keys."
+            }
+        ],
+        "SealAfterPrecomputation": [
+            {
+                "Predicate": "NOT_CONST",
+                "Object": [
+                    "2"
+                ],
+                "Reason": "R11: The nonce must be unique for each distinct message for a given pair of keys."
+            }
+        ],
+        "SealAnonymous": [
+            {
+                "Predicate": "NOT_CONST",
+                "Object": [
+                    "2"
+                ],
+                "Reason": "R11: The nonce must be unique for each distinct message for a given pair of keys."
+            }
+        ]
+    }
+}

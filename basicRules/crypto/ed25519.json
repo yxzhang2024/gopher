@@ -1,0 +1,32 @@
+{
+    "Package_Name": "crypto/ed25519",
+    "Parameter_Constrains": {
+        "NewKeyFromSeed": [
+            {
+                "Predicate": "RANDOM_BYTES",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "ED25519-key should be generated from random bytes"
+            }
+        ],
+        "GenerateKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys. "
+            }
+        ],
+        "(PrivateKey).Sign": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating parameters."
+            }
+        ]
+    }
+}

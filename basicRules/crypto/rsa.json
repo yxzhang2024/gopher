@@ -1,0 +1,82 @@
+{
+    "Package_Name": "crypto/rsa",
+    "Dangerous_Functions": [
+        {
+            "Name": "EncryptPKCS1v15",
+            "Reason": "RSAES-PKCS1-v1_5 is deprecated, RSAES-OAEP is recommended, that is, \"EncryptOAEP\""
+        }
+    ],
+    "Warning_Functions": [
+        {
+            "Name": "SignPKCS1v15",
+            "Reason": "RSA-PKCS1-v1_5 is deprecated, RSASSA-PSS is recommended, that is, \"SignPSS\""
+        },
+        {
+            "Name": "GenerateMultiPrimeKey",
+            "Reason": "Deprecated: The use of this function with a number of primes different from two is not recommended for the above security, compatibility, and performance reasons. Use GenerateKey instead."
+        }
+    ],
+    "Parameter_Constrains": {
+        "GenerateKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys."
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "1",
+                    "3072"
+                ],
+                "Reason": "RSA-512 and RSA-1024 is insecure, RSA-2048 is Acceptable but not recommended."
+            }
+        ],
+        "EncryptOAEP": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "1"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating parameters. "
+            }
+        ],
+        "GenerateMultiPrimeKey": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating keys. "
+            },
+            {
+                "Predicate": "GEQ",
+                "Object": [
+                    "2",
+                    "3072"
+                ],
+                "Reason": "RSA-512 and RSA-1024 is insecure, RSA-2048 is Acceptable but not recommended."
+            }
+        ],
+        "EncryptPKCS1v15": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating parameters. "
+            }
+        ],
+        "SignPSS": [
+            {
+                "Predicate": "RANDOM_IO",
+                "Object": [
+                    "0"
+                ],
+                "Reason": "Cryptologically secure IO should be chosen for generating parameters. "
+            }
+        ]
+    }
+}
